@@ -3,6 +3,10 @@
 <launch>
     <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find m2wr_description)/urdf/m2wr.xacro'"/>
 
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    	<arg name="world_name" value="$(find m2wr_description)/worlds/world03.world"/>
+    </include>
+
     <arg name="x" default="0"/>
     <arg name="y" default="-5"/>
     <arg name="z" default="0.5"/>
